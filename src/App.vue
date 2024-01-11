@@ -15,14 +15,8 @@
             <button @click.prevent="addImage">Submit</button>
         </form>
 
-        <!-- IMAGE GRID -->
-        <div class = "image-grid">
-            <!-- Create an <img> tag for each of your URLs using a v-for loop. Set your URL as the src attribute. -->
-            <img v-for="url in images" 
-                :src = "url"
-            />
-
-        </div>
+        <!-- Render component -->
+        <ImageGrid :images="images" />
     </div>
 </template>
     
@@ -30,11 +24,16 @@
     - These will add data and functionality to our app.
     - We write them in Javascript. -->
 <script>
+    // import component (by file path)
+    import ImageGrid from "./components/ImageGrid.vue";
+
     export default {
         //  The name of our component. It should match the file name.
         name: 'App',
-        // This is where we list any components we will import.
-        components: {},
+        // This is where we list any components we import.
+        components: {
+            ImageGrid
+        },
         // This is where we create variables (in the return statement)
         data() {
             return {
