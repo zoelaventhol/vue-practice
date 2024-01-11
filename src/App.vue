@@ -17,7 +17,11 @@
 
         <!-- IMAGE GRID -->
         <div class = "image-grid">
-            (Images will go here)
+            <!-- Create an <img> tag for each of your URLs using a v-for loop. Set your URL as the src attribute. -->
+            <img v-for="url in images" 
+                :src = "url"
+            />
+
         </div>
     </div>
 </template>
@@ -63,6 +67,28 @@
     }
 
     input, button {
-        margin-bottom: 1em;
+        margin-bottom: 2em;
+    }
+
+    .image-grid {
+        /* set it up as a grid with 3 columns, and a gap between images */
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1em;
+        
+        /* center it on the page */
+        width: 50%;
+        margin: auto;
+    }
+
+    img {
+        /* standardize height */
+        height: 150px;
+        /* make everything square */
+        aspect-ratio: 1;
+        /* make sure image is cropped, not distorted */
+        object-fit: cover;
+        /* round the corners */
+        border-radius: 10%;
     }
 </style>
