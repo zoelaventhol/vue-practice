@@ -8,9 +8,9 @@
         <!-- INPUT FORM -->
         <form>
             Add image: 
-            <input type="text" v-model="url"/>
+            <input type="text"/>
             <br />
-            <button @click.prevent="addImage">Submit</button>
+            <button>Submit</button>
         </form>
 
         <!-- IMAGE GRID -->
