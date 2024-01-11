@@ -8,8 +8,10 @@
         <!-- INPUT FORM -->
         <form>
             Add image: 
+            <!-- Add v-model to save input as a variable in data -->
             <input type="text" v-model="url"/>
             <br />
+            <!-- Add @click event handler. ".prevent" to prevent the page refreshing. -->
             <button @click.prevent="addImage">Submit</button>
         </form>
 
@@ -32,10 +34,21 @@
         // This is where we create variables (in the return statement)
         data() {
             return {
+                // Add variables to save url from input, and to save all image urls together
+                url: "",
+                images: []
             }
         },
         // This is where we define our functions.
-        methods: {}
+        methods: {
+            addImage() {
+                // push image url into the images array
+                this.images.push(this.url);
+                // reset the form to blank
+                this.url = "";
+            },
+ 
+        }
     }
 </script>
     
