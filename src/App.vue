@@ -3,7 +3,20 @@
     - We write it in HTML-->
 <template>
     <div class="App">
-        <h1>Hey FSPT26! 👋</h1>
+        <h1>Picture time! 📸</h1>
+        
+        <!-- INPUT FORM -->
+        <form>
+            Add image: 
+            <input type="text" v-model="url"/>
+            <br />
+            <button @click.prevent="addImage">Submit</button>
+        </form>
+
+        <!-- IMAGE GRID -->
+        <div class = "image-grid">
+            (Images will go here)
+        </div>
     </div>
 </template>
     
@@ -22,8 +35,7 @@
             }
         },
         // This is where we define our functions.
-        methods: {
-        }
+        methods: {}
     }
 </script>
     
@@ -35,5 +47,9 @@
         margin: 0 auto;
         font-family: Arial, Helvetica, sans-serif;
         text-align: center;
+    }
+
+    input, button {
+        margin-bottom: 1em;
     }
 </style>
