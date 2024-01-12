@@ -37,6 +37,9 @@ In App.vue, create a simple form with one text input field and a submit button.
 - A ```div``` that will hold images. (No need to add images yet.)
 - A "Submit" button.
 
+![image](demo_screenshots/step-1.png)
+
+
 ### Step 2: Add functionality
 Add functionality to your "Submit" button - when you click it, it should save your form input (an image URL), to your data.
 
@@ -44,12 +47,16 @@ Add functionality to your "Submit" button - when you click it, it should save yo
 - Add data binding to your input field.
 - On button click, push the input into your "images array".
 
+![image](demo_screenshots/step-2.png)
+
 ### Step 3: Display your images
 Render all of your saved images in your image grid.
 
 - Using ```v-for```, loop through your "images" data, and create an ```<img>``` tag for each one.
 - Add some styling so that your images are a manageable size, arranged in a grid, evenly spaced and centered.
 - When you add a new image with your "Submit" button, it should appear automatically in your grid.
+
+![image](demo_screenshots/step-3.png)
 
 ### Step 4: Separate your image grid into its own component
 Our App.vue is getting a little long -  let's separate the image grid into its own component!
