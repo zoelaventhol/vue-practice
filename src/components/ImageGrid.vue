@@ -2,12 +2,15 @@
     <div class="ImageGrid">
         <!-- BUTTONS -->
         <div class = "buttons">
+            <!-- Add click handlers to toggle "isBig" data -->
+            <!-- Add conditional class "active": for Big when "isBig" is true, for Small when false -->
             <button @click="toggle(true)" :class="{ active: isBig }">Big</button>
             <button @click="toggle(false)" :class="{ active: !isBig }">Small</button>
         </div>
         <!-- IMAGE GRID -->
         <div class = "image-grid">
             <!-- Create an <img> tag for each of your URLs using a v-for loop. Set your URL as the src attribute. -->
+            <!-- Add conditional class "big" when "isBig" is true -->
             <img 
                 v-for="url in images" 
                 :src = "url"
@@ -54,6 +57,7 @@
         border: 2px solid red;
     }
 
+    /* Create "big" class */
     .big {
         height: 200px;
     }
