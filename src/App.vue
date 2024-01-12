@@ -4,6 +4,19 @@
 <template>
     <div class="App">
         <h1>Hey FSPT26! 👋</h1>
+        
+        <!-- FORM -->
+        Add image: <input v-model="url" type="url" />
+        <br/>
+        <button @click="addImage">Submit</button>
+
+        <!-- IMAGE GRID -->
+        <div class = "image-grid">
+            <img 
+                v-for="i in images"
+                :src = "i"
+            />
+        </div>
     </div>
 </template>
     
@@ -19,10 +32,19 @@
         // This is where we create variables (in the return statement)
         data() {
             return {
+                url: "",
+                images: []
             }
         },
         // This is where we define our functions.
         methods: {
+            addImage () {
+                console.log(this.url);
+                // add the input url to images
+                this.images.push(this.url);
+                // reset input to bank
+                this.url = ""
+            }
         }
     }
 </script>
@@ -35,5 +57,10 @@
         margin: 0 auto;
         font-family: Arial, Helvetica, sans-serif;
         text-align: center;
+    }
+
+    button {
+        margin-top: 1em;
+        margin-bottom: 1em;
     }
 </style>
