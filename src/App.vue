@@ -69,6 +69,10 @@
         margin-bottom: 2em;
     }
 
+    button {
+        border-radius: 5px
+    }
+
     .image-grid {
         /* set it up as a grid with 3 columns, and a gap between images */
         display: grid;
