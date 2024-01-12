@@ -38,7 +38,8 @@ In App.vue, create a simple form with one text input field and a submit button.
 - A "Submit" button.
 
 ### Step 2: Add functionality
-_Data binding with v-model, and click events_
+_Concepts: data binding with v-model, and click events._
+
 Add functionality to your "Submit" button - when you click it, it should save your form input (an image URL), to your data.
 
 - Create data called "images", and initialize it as an empty array.
@@ -46,7 +47,8 @@ Add functionality to your "Submit" button - when you click it, it should save yo
 - On button click, push the input into your "images array".
 
 ### Step 3: Display your images
-_Looping with v-for_
+_Concepts: Looping with v-for_
+
 Render all of your saved images in your image grid.
 
 - Using ```v-for```, loop through your "images" data, and create an ```<img>``` tag for each one.
@@ -54,7 +56,8 @@ Render all of your saved images in your image grid.
 - When you add a new image with your "Submit" button, it should appear automatically in your grid.
 
 ### Step 4: Separate your image grid into its own component
-_Components and passing props_
+_Concepts: Components and passing props_
+
 Our App.vue is getting a little long -  let's separate the image grid into its own component!
 
 - Create a folder called "components", and inside that, create a file called "ImageGrid.vue"
@@ -67,7 +70,7 @@ Our App.vue is getting a little long -  let's separate the image grid into its o
 
 
 ### Step 5: Conditional styling
-In your ```ImageGrid```, create buttons that say "big" and "small".
+In your `ImageGrid`, create buttons that say "big" and "small".
 Clicking the "big" button should make the size of your images bigger. Clicking "small" should return them to their original size.
 Whichever size is "active" should be clear in the button styling. i.e. If your images are bigger, the "big" button should be highlighted somehow. If the images are small, the "small" button should be highlighted to show that this is the active state.
 
@@ -77,3 +80,18 @@ Whichever size is "active" should be clear in the button styling. i.e. If your i
 - Add basic functionality: clicking "small" should set "isBig" to false, and clicking "big" should set it to true.
 - In your ```<style>``` section, create a new ```img``` class ```.big```, with a larger image size.
 - Add a conditional class to your ```<img>``` tags: if "isBig" is true, it should have the ```.big``` class and should appear larger.
+
+### Step 6: Conditional rendering
+_Concepts: v-if and v-else_
+
+Finally, let's use conditional rendering to hide or show our input form. Instead we should show a button saying "Add images!". Clicking the button should show the form.
+
+- In App.vue, create a button "Add images!"
+- Create "showForm" data and initialize it to "false"
+- Add a `v-if` to your form, so it only renders (aka displays) if "showForm" is true. You should see your form disappear.
+- Add a click handler to your "Add images!" button, so it toggles `showForm` between true & false. Now your form should disappear and reappear when you click the button.
+
+Finally, let's clarify our button text: when the form is hidden, the button should say "Add images!" But when the form is showing, let's change the button text to "Hide form"
+- Wrap your button text in an HTML tag (like `<p>`, so we have something to add the `v-if` & `v-else` to).
+- In the same button, add a second tag of text that says "Hide form"
+- Add a `v-if` and `v-else` to your 2 possible button texts: "Add images!" should show when `showForm` is false, and "Hide form" should show when it's true.

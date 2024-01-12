@@ -4,9 +4,18 @@
 <template>
     <div class="App">
         <h1>Picture time! 📸</h1>
+
+        <!-- button with @click to toggle showForm -->
+        <button @click="showForm = !showForm">
+            <!-- Conditionally change button text: if form is showing, button should say "Hide form" -->
+            <p v-if="showForm">Hide form</p>
+            <!-- Else (if form is hidden), should say "Add images!" -->
+            <p v-else>Add images!</p>
+        </button>
         
         <!-- INPUT FORM -->
-        <form>
+        <!-- Add v-if to form, so it only renders when "showForm" is true -->
+        <form v-if="showForm">
             Add image: 
             <!-- Add v-model to save input as a variable in data -->
             <input type="text" v-model="url"/>
@@ -39,7 +48,9 @@
             return {
                 // Add variables to save url from input, and to save all image urls together
                 url: "",
-                images: []
+                images: [],
+                // add variable to show or hide form
+                showForm: false
             }
         },
         // This is where we define our functions.
