@@ -38,6 +38,7 @@ In App.vue, create a simple form with one text input field and a submit button.
 - A "Submit" button.
 
 ### Step 2: Add functionality
+_Data binding with v-model, and click events_
 Add functionality to your "Submit" button - when you click it, it should save your form input (an image URL), to your data.
 
 - Create data called "images", and initialize it as an empty array.
@@ -45,6 +46,7 @@ Add functionality to your "Submit" button - when you click it, it should save yo
 - On button click, push the input into your "images array".
 
 ### Step 3: Display your images
+_Looping with v-for_
 Render all of your saved images in your image grid.
 
 - Using ```v-for```, loop through your "images" data, and create an ```<img>``` tag for each one.
@@ -52,17 +54,19 @@ Render all of your saved images in your image grid.
 - When you add a new image with your "Submit" button, it should appear automatically in your grid.
 
 ### Step 4: Separate your image grid into its own component
+_Components and passing props_
 Our App.vue is getting a little long -  let's separate the image grid into its own component!
 
 - Create a folder called "components", and inside that, create a file called "ImageGrid.vue"
-- Move the relevant HTML (the code in ```<template>```) for your image grid into that component (and delete from App.vue)
-- Make sure you're importing, exporting, and rendering everything correctly. 
+- Move the relevant HTML (the code in `<template>`) for your image grid into that component (and delete from App.vue)
+- Make sure you're importing, exporting, and rendering everything correctly:
+  - Make sure the structure and names of your new `ImageGrid` file are correct.
+  - Import your `ImageGrid` file to App.vue and list it in your components.
+  - Render your `<ImageGrid>` component in your App's `<template>`.
+  - Pass your "images" data to `ImageGrid` as a prop. Remember you need to pass it down from the App, and receive it in `ImageGrid`.
 
-### Step 5: Pass props from the parent
-One problem: now your component doesn't have access to your ```images``` data! 
-Pass it as a prop to the child component ```ImageGrid```, so it renders correctly again.
 
-### Step 6: Conditional styling
+### Step 5: Conditional styling
 In your ```ImageGrid```, create buttons that say "big" and "small".
 Clicking the "big" button should make the size of your images bigger. Clicking "small" should return them to their original size.
 Whichever size is "active" should be clear in the button styling. i.e. If your images are bigger, the "big" button should be highlighted somehow. If the images are small, the "small" button should be highlighted to show that this is the active state.

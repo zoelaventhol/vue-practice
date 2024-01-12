@@ -21,6 +21,8 @@
         },
         methods: {
         },
+        // receive props
+        props: ['images']
     }
 </script>
     
