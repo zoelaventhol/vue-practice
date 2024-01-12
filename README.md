@@ -88,3 +88,24 @@ Small:
 
 Big:
 ![image](demo_screenshots/step-5b.png)
+
+### Step 6: Conditional rendering
+_Concepts: v-if and v-else_
+
+Finally, let's use conditional rendering to hide or show our input form. Instead we should show a button saying "Add images!". Clicking the button should show the form.
+
+- In App.vue, create a button "Add images!"
+- Create "showForm" data and initialize it to "false"
+- Add a `v-if` to your form, so it only renders (aka displays) if "showForm" is true. You should see your form disappear.
+- Add a click handler to your "Add images!" button, so it toggles `showForm` between true & false. Now your form should disappear and reappear when you click the button.
+
+Finally, let's clarify our button text: when the form is hidden, the button should say "Add images!" But when the form is showing, let's change the button text to "Hide form"
+- Wrap your button text in an HTML tag (like `<p>`, so we have something to add the `v-if` & `v-else` to).
+- In the same button, add a second tag of text that says "Hide form"
+- Add a `v-if` and `v-else` to your 2 possible button texts: "Add images!" should show when `showForm` is false, and "Hide form" should show when it's true.
+
+Hidden form:
+![image](demo_screenshots/step-6a.png)
+
+With form:
+![image](demo_screenshots/step-6b.png)
