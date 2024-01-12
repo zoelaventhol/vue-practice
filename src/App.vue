@@ -11,12 +11,9 @@
         <button @click="addImage">Submit</button>
 
         <!-- IMAGE GRID -->
-        <div class = "image-grid">
-            <img 
-                v-for="i in images"
-                :src = "i"
-            />
-        </div>
+        <ImageGrid 
+            :images="images"
+        />
     </div>
 </template>
     
@@ -24,11 +21,15 @@
     - These will add data and functionality to our app.
     - We write them in Javascript. -->
 <script>
+    import ImageGrid from "./components/ImageGrid.vue"
+
     export default {
         //  The name of our component. It should match the file name.
         name: 'App',
         // This is where we list any components we will import.
-        components: {},
+        components: {
+            ImageGrid
+        },
         // This is where we create variables (in the return statement)
         data() {
             return {
@@ -39,7 +40,6 @@
         // This is where we define our functions.
         methods: {
             addImage () {
-                console.log(this.url);
                 // add the input url to images
                 this.images.push(this.url);
                 // reset input to bank
@@ -63,4 +63,20 @@
         margin-top: 1em;
         margin-bottom: 1em;
     }
+
+    .image-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1em;
+        width: 50%;
+        margin: auto;
+    }
+
+    img {
+        height: 150px;
+        aspect-ratio: 1;
+        object-fit: cover;
+        border-radius: 10%;
+    }
+
 </style>
