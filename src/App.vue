@@ -5,10 +5,17 @@
     <div class="App">
         <h1>Hey FSPT26! 👋</h1>
         
+        <button @click="showForm = !showForm">
+            <p v-if="showForm">Hide form</p>
+            <p v-else>Add images!</p>
+        </button>
+
         <!-- FORM -->
-        Add image: <input v-model="url" type="url" />
-        <br/>
-        <button @click="addImage">Submit</button>
+        <form v-if="showForm">
+            Add image: <input v-model="url" type="url" />
+            <br/>
+            <button @click.prevent="addImage">Submit</button>
+        </form>
 
         <!-- IMAGE GRID -->
         <ImageGrid 
@@ -34,7 +41,8 @@
         data() {
             return {
                 url: "",
-                images: []
+                images: [],
+                showForm: false
             }
         },
         // This is where we define our functions.
